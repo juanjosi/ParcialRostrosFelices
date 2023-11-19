@@ -7,5 +7,6 @@
         public string TipoDocumento { get; set; }
         public int NroDocumento { get; set; }
         public int Telefono { get; set; }
+        public ICollection<Servicio>? Servicios { get; set; }
     }
 }
