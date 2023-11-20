@@ -33,7 +33,7 @@ namespace ParcialRostrosFelices.Pages.Servicios
 		{
 			if (!ModelState.IsValid || _context.Servicios == null || Servicio == null)
 			{
-				listClient();
+				listarClient();
 				return Page();
 			}
 			_context.Servicios.Add(Servicio);
