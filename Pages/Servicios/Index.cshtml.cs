@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,7 +7,8 @@ using ParcialRostrosFelices.Models;
 
 namespace ParcialRostrosFelices.Pages.Servicios
 {
-    public class IndexModel : PageModel
+	[Authorize]
+	public class IndexModel : PageModel
     {
 		private readonly RostrosFelicesContext _context;
 
