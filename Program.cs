@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using ParcialRostrosFelices.Data;
+
 namespace ParcialRostrosFelices
 {
     public class Program
@@ -8,7 +11,9 @@ namespace ParcialRostrosFelices
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-
+            builder.Services.AddDbContext<RostrosFelicesContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("RostrosFelicesDB"))
+            );
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -5,6 +5,9 @@ namespace ParcialRostrosFelices.Data
 {
     public class RostrosFelicesContext:DbContext
     {
+        public RostrosFelicesContext(DbContextOptions options) : base(options)
+        {
+        }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Servicio> Servicios { get; set; }
 
