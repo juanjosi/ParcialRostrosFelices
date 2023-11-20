@@ -1,0 +1,60 @@
+﻿@page
+@model ParcialRostrosFelices.Pages.Servicios.IndexModel
+@{
+	ViewData["Title"] = "Index Servicios";
+}
+<h1>Index Servicios</h1>
+
+<p>
+	<a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Servicios[0].NombreServicio)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Servicios[0].Fecha)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Servicios[0].NombreEmpleado)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Servicios[0].Observacion)
+			</th>
+			<th>
+				Cliente
+			</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Servicios)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.NombreServicio)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Fecha)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.NombreEmpleado)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Observacion)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Cliente.Name)
+				</td>
+
+				<td>
+					<a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+					<a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
